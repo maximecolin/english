@@ -19,11 +19,18 @@ export default {
       ],
     }
   },
+  mounted() {
+    const words = this.$route.query.words;
+
+    if (words !== undefined) {
+      this.words = this.$route.query.words.split(',')
+    }
+  },
   methods: {
     addPhrase() {
       this.phrases.push([])
-    }
-  }
+    },
+  },
 }
 </script>
 
